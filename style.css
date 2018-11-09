@@ -1,0 +1,109 @@
+  .top-bar {
+    width: 100%;
+    height: 70px;
+    background-color: #e0e0e0;
+  }
+
+
+  table{
+  border-collapse:collapse;
+  border:1px solid black;
+  }
+
+  table td{
+  border:1px solid gray;
+  width: 30px;
+  }
+
+  .unavailable {
+    background-color: red;
+  }
+
+  * {
+      box-sizing: border-box;
+  }
+
+  body {
+      margin: 0;
+      font-family: Arial;
+  }
+
+  /* The grid: Four equal columns that floats next to each other */
+  .column {
+      float: left;
+      width: 25%;
+      padding: 10px;
+  }
+
+  /* Style the images inside the grid */
+  .column img {
+      opacity: 0.8;
+      cursor: pointer;
+  }
+
+  .column img:hover {
+      opacity: 1;
+  }
+
+  .row {
+    width: 100%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+
+  /* The expanding image container */
+  .container {
+      position: relative;
+      display: show;
+  }
+
+  /* Expanding image text */
+  #imgtext {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      color: white;
+      font-size: 20px;
+  }
+
+  hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    color: black;
+  }
+
+ .contain{
+   width: 30%;
+   height: 450px;
+   border: 5px solid black;
+   margin: 60px;
+   border-radius: 10px;
+ }
+
+  #map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 35%; /* The width is the width of the web page */
+    position: absolute;
+    right: 60px;
+    top: 60px;
+         }
+
+
+
+
+
+/*  #wrapper {
+      overflow: auto;
+      height: 600px;
+      background-color: red;
+      width: 100%;
+  }

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <title>Rent Jason's Volkswagen Golf</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+
+  <body>
+
+    <!-- The four columns -->
+      <div class="contain">
+        <div class="row">
+          <div class="column">
+            <img src="images/img_car1.jpg" alt="Car Pic 1" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="images/img_car2.jpg" alt="Car Pic 2" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="images/img_car3.jpg" alt="Car Pic 3" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="images/img_car4.jpg" alt="Car Pic 4" style="width:100%" onclick="myFunction(this);">
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="container">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <img id="expandedImg" style="width:95%">
+          <div id="imgtext"></div>
+        </div>
+      </div>
+
+      <!--The div element for the map -->
+      <div id="map"></div>
+
+      <div class="contain">
+        <div class="date-time">
+          Pickup Date + Time:<input id="pickup-date" type="datetime-local" name="task_date" /><br />
+          Return Date + Time:<input id="return-date" type="datetime-local" name="task_date" /><br />
+          <button id="calc">Calculate Hours</button>
+          <br />
+          <button id="calc-cost" name="button">Calculate Cost</button>
+
+          <p>Jason's daily Rate is €<span id="daily-rate">35</span>, hourly rate is €<span id="hourly-rate">6</span>,
+             and per minute rate is €<span id="minutely-rate">0.12</span>.</p>
+
+          <p id="rental-cost"></p>
+        </div>
+      </div>
+
+      <div id="calendar">
+        <table>
+          <tr>
+            <th></th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+          </tr>
+
+          <tr>
+            <td>00:00</td>
+            <td id="mon-00"></td>
+            <td id="tue-00"></td>
+            <td id="wed-00"></td>
+            <td id="thu-00"></td>
+            <td id="fri-00"></td>
+            <td id="sat-00"></td>
+            <td id="sun-00"></td>
+          </tr>
+
+          <tr>
+            <td>01:00</td>
+            <td id="mon-01"></td>
+            <td id="tue-01"></td>
+            <td id="wed-01"></td>
+            <td id="thu-01"></td>
+            <td id="fri-01"></td>
+            <td id="sat-01"></td>
+            <td id="sun-01"></td>
+          </tr>
+
+          <tr>
+            <td>02:00</td>
+            <td id="mon-02"></td>
+            <td id="tue-02"></td>
+            <td id="wed-02"></td>
+            <td id="thu-02"></td>
+            <td id="fri-02"></td>
+            <td id="sat-02"></td>
+            <td id="sun-02"></td>
+          </tr>
+
+          <tr>
+            <td>03:00</td>
+            <td id="mon-03"></td>
+            <td id="tue-03"></td>
+            <td id="wed-03"></td>
+            <td id="thu-03"></td>
+            <td id="fri-03"></td>
+            <td id="sat-03"></td>
+            <td id="sun-03"></td>
+          </tr>
+
+          <tr>
+            <td>04:00</td>
+            <td id="mon-04"></td>
+            <td id="tue-04"></td>
+            <td id="wed-04"></td>
+            <td id="thu-04"></td>
+            <td id="fri-04"></td>
+            <td id="sat-04"></td>
+            <td id="sun-04"></td>
+          </tr>
+
+          <tr>
+            <td>05:00</td>
+            <td id="mon-05"></td>
+            <td id="tue-05"></td>
+            <td id="wed-05"></td>
+            <td id="thu-05"></td>
+            <td id="fri-05"></td>
+            <td id="sat-05"></td>
+            <td id="sun-05"></td>
+          </tr>
+
+          <tr>
+            <td>06:00</td>
+            <td id="mon-06"></td>
+            <td id="tue-06"></td>
+            <td id="wed-06"></td>
+            <td id="thu-06"></td>
+            <td id="fri-06"></td>
+            <td id="sat-06"></td>
+            <td id="sun-06"></td>
+          </tr>
+
+          <tr>
+            <td>07:00</td>
+            <td id="mon-07"></td>
+            <td id="tue-07"></td>
+            <td id="wed-07"></td>
+            <td id="thu-07"></td>
+            <td id="fri-07"></td>
+            <td id="sat-07"></td>
+            <td id="sun-07"></td>
+          </tr>
+
+          <tr>
+            <td>08:00</td>
+            <td id="mon-08"></td>
+            <td id="tue-08"></td>
+            <td id="wed-08"></td>
+            <td id="thu-08"></td>
+            <td id="fri-08"></td>
+            <td id="sat-08"></td>
+            <td id="sun-08"></td>
+          </tr>
+
+          <tr>
+            <td>09:00</td>
+            <td id="mon-09"></td>
+            <td id="tue-09"></td>
+            <td id="wed-09"></td>
+            <td id="thu-09"></td>
+            <td id="fri-09"></td>
+            <td id="sat-09"></td>
+            <td id="sun-09"></td>
+          </tr>
+
+          <tr>
+            <td>10:00</td>
+            <td id="mon-10"></td>
+            <td id="tue-10"></td>
+            <td id="wed-10"></td>
+            <td id="thu-10"></td>
+            <td id="fri-10"></td>
+            <td id="sat-10"></td>
+            <td id="sun-10"></td>
+          </tr>
+
+          <tr>
+            <td>11:00</td>
+            <td id="mon-11"></td>
+            <td id="tue-11"></td>
+            <td id="wed-11"></td>
+            <td id="thu-11"></td>
+            <td id="fri-11"></td>
+            <td id="sat-11"></td>
+            <td id="sun-11"></td>
+          </tr>
+
+          <tr>
+            <td>12:00</td>
+            <td id="mon-12"></td>
+            <td id="tue-12"></td>
+            <td id="wed-12"></td>
+            <td id="thu-12"></td>
+            <td id="fri-12"></td>
+            <td id="sat-12"></td>
+            <td id="sun-12"></td>
+          </tr>
+
+          <tr>
+            <td>13:00</td>
+            <td id="mon-13"></td>
+            <td id="tue-13"></td>
+            <td id="wed-13"></td>
+            <td id="thu-13"></td>
+            <td id="fri-13"></td>
+            <td id="sat-13"></td>
+            <td id="sun-13"></td>
+          </tr>
+
+          <tr>
+            <td>14:00</td>
+            <td id="mon-14"></td>
+            <td id="tue-14"></td>
+            <td id="wed-14"></td>
+            <td id="thu-14"></td>
+            <td id="fri-14"></td>
+            <td id="sat-14"></td>
+            <td id="sun-14"></td>
+          </tr>
+
+          <tr>
+            <td>15:00</td>
+            <td id="mon-15"></td>
+            <td id="tue-15"></td>
+            <td id="wed-15"></td>
+            <td id="thu-15"></td>
+            <td id="fri-15"></td>
+            <td id="sat-15"></td>
+            <td id="sun-15"></td>
+          </tr>
+
+          <tr>
+            <td>16:00</td>
+            <td id="mon-16"></td>
+            <td id="tue-16"></td>
+            <td id="wed-16"></td>
+            <td id="thu-16"></td>
+            <td id="fri-16"></td>
+            <td id="sat-16"></td>
+            <td id="sun-16"></td>
+          </tr>
+
+          <tr>
+            <td>17:00</td>
+            <td id="mon-17"></td>
+            <td id="tue-17"></td>
+            <td id="wed-17"></td>
+            <td id="thu-17"></td>
+            <td id="fri-17"></td>
+            <td id="sat-17"></td>
+            <td id="sun-17"></td>
+          </tr>
+
+          <tr>
+            <td>18:00</td>
+            <td id="mon-18"></td>
+            <td id="tue-18"></td>
+            <td id="wed-18"></td>
+            <td id="thu-18"></td>
+            <td id="fri-18"></td>
+            <td id="sat-18"></td>
+            <td id="sun-18"></td>
+          </tr>
+
+          <tr>
+            <td>19:00</td>
+            <td id="mon-19"></td>
+            <td id="tue-19"></td>
+            <td id="wed-19"></td>
+            <td id="thu-19"></td>
+            <td id="fri-19"></td>
+            <td id="sat-19"></td>
+            <td id="sun-19"></td>
+          </tr>
+
+          <tr>
+            <td>20:00</td>
+            <td id="mon-20"></td>
+            <td id="tue-20"></td>
+            <td id="wed-20"></td>
+            <td id="thu-20"></td>
+            <td id="fri-20"></td>
+            <td id="sat-20"></td>
+            <td id="sun-20"></td>
+          </tr>
+
+          <tr>
+            <td>21:00</td>
+            <td id="mon-21"></td>
+            <td id="tue-21"></td>
+            <td id="wed-21"></td>
+            <td id="thu-21"></td>
+            <td id="fri-21"></td>
+            <td id="sat-21"></td>
+            <td id="sun-21"></td>
+          </tr>
+
+          <tr>
+            <td>22:00</td>
+            <td id="mon-22"></td>
+            <td id="tue-22"></td>
+            <td id="wed-22"></td>
+            <td id="thu-22"></td>
+            <td id="fri-22"></td>
+            <td id="sat-22"></td>
+            <td id="sun-22"></td>
+          </tr>
+
+          <tr>
+            <td>23:00</td>
+            <td id="mon-23"></td>
+            <td id="tue-23"></td>
+            <td id="wed-23"></td>
+            <td id="thu-23"></td>
+            <td id="fri-23"></td>
+            <td id="sat-23"></td>
+            <td id="sun-23"></td>
+          </tr>
+
+
+        </table>
+
+        <form class="" action="index.html" method="post">
+          <input type="checkbox" name="time" value="00">00 <br />
+          <input type="checkbox" name="time" value="01">01 <br />
+          <input type="checkbox" name="time" value="02">02 <br />
+          <input type="checkbox" name="time" value="03">03 <br />
+          <input type="checkbox" name="time" value="04">04 <br />
+          <input type="checkbox" name="time" value="05">05 <br />
+          <input type="checkbox" name="time" value="06">06 <br />
+          <input type="checkbox" name="time" value="07">07 <br />
+          <input type="checkbox" name="time" value="08">08 <br />
+          <input type="checkbox" name="time" value="09">09 <br />
+          <input type="checkbox" name="time" value="10">10 <br />
+          <input type="checkbox" name="time" value="11">11 <br />
+          <input type="checkbox" name="time" value="12">12 <br />
+          <input type="checkbox" name="time" value="13">13 <br />
+          <input type="checkbox" name="time" value="14">14 <br />
+          <input type="checkbox" name="time" value="15">15 <br />
+          <input type="checkbox" name="time" value="16">16 <br />
+          <input type="checkbox" name="time" value="17">17 <br />
+          <input type="checkbox" name="time" value="18">18 <br />
+          <input type="checkbox" name="time" value="19">19 <br />
+          <input type="checkbox" name="time" value="20">20 <br />
+          <input type="checkbox" name="time" value="21">21 <br />
+          <input type="checkbox" name="time" value="22">22 <br />
+          <input type="checkbox" name="time" value="1">23 <br />
+
+        </form>
+      </div>
+
+
+
+  <script type="text/javascript">
+
+    var dailyRate = 35,
+        hourlyRate = 6,
+        minutelyRate = 0.12;
+
+		function myFunction(imgs) {
+			// Get the expanded image
+			var expandImg = document.getElementById("expandedImg");
+			// Get the image text
+			var imgText = document.getElementById("imgtext");
+			// Use the same src in the expanded image as the image being clicked on from the grid
+			expandImg.src = imgs.src;
+			// Use the value of the alt attribute of the clickable image as text inside the expanded image
+			imgText.innerHTML = imgs.alt;
+			// Show the container element (hidden with CSS)
+			expandImg.parentElement.style.display = "block";
+			}
+
+
+      // Initialize and add the map
+      function initMap() {
+        // The location of the Spire
+        var spire = {lat: 53.3498, lng: -6.2603};
+        // The map, centered at the Spire
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 12, center: spire});
+        // The marker, positioned at the Spire
+        var marker = new google.maps.Marker({position: spire, map: map});
+      }
+
+      var calc = document.getElementById("calc");
+
+      var totalDays,
+          totalHours,
+          totalMinutes;
+
+      calc.addEventListener("click", function() {
+          var pickupDate = document.getElementById("pickup-date").value,
+              returnDate = document.getElementById("return-date").value,
+              days = 1000*3600*24,
+              hours = 1000*3600,
+              minutes = 1000*60;
+
+          console.log(parseDate(pickupDate));
+          console.log(parseDate(returnDate));
+
+          var dayDiff = Math.abs(parseDate(returnDate) - parseDate(pickupDate));
+          console.log(dayDiff);
+          totalDays = Math.floor(dayDiff / days);
+          totalHours = Math.floor((dayDiff%days) / hours);
+          totalMinutes = Math.floor((dayDiff%hours) / minutes);
+
+          if(dayDiff < 0){
+            console.log("Error");
+          }
+
+          alert("You have requested " + totalDays + " days, " + totalHours + " hours, and " + totalMinutes
+           + " minutes rental. Click OK to calculate the cost.");
+      })
+
+      var calcCost = document.getElementById('calc-cost');
+
+      calcCost.addEventListener("click", function() {
+        /*var dailyRate = document.getElementById("daily-rate").value,
+            hourlyRate = document.getElementById("hourly-rate").value,
+            minutelyRate = document.getElementById("minutely-rate").value;
+
+            console.log(Number(dailyRate));*/
+
+      //  var dailyRateDone = parseFloat(dailyRate);
+
+        var dailyCost = dailyRate * totalDays,
+            hourlyCost = hourlyRate * totalHours,
+            minutelyCost = minutelyRate * totalMinutes,
+            totalCost = dailyCost + hourlyCost + minutelyCost;
+            console.log(totalDays + " " + totalHours + " " + totalMinutes);
+            console.log(dailyCost);
+            console.log(hourlyCost);
+            console.log(minutelyCost);
+
+            alert("The total price for your rental is €" + totalCost + ".");
+
+            document.getElementById('rental-cost').innerHTML = "Rental cost = €" + totalCost;
+      })
+
+
+
+      function parseDate(input) {
+        var parts = input.match(/(\d+)/g);
+        // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
+        return new Date(parts[0], parts[1], parts[2], parts[3], parts[4]); // months are 0-based
+      }
+
+      function parseString(input) {
+        var parse = Number(input);
+        return input;
+      }
+
+
+	</script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDONGd8jrMHH0vdP01hra-QU-P-_Tatc5I&callback=initMap">
+  </script>
+
+
+
+  </body>
+</html>
