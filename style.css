@@ -6,8 +6,21 @@
 
 
   table{
-  border-collapse:collapse;
-  border:1px solid black;
+    border-collapse:collapse;
+    border:1px solid black;
+  }
+
+  #terms {
+    color: red;
+    font-weight: bold;
+  }
+
+  #contact-title {
+    text-align: center;
+  }
+
+  .email-phone {
+    margin-left: 10px;
   }
 
   table td{
@@ -82,8 +95,8 @@
   }
 
  .contain{
-   width: 30%;
-   height: 450px;
+   width: 40%;
+   height: 550px;
    border: 5px solid black;
    margin: 60px;
    border-radius: 10px;
