@@ -1,0 +1,107 @@
+/* Navbar Start */
+
+/* Navbar End */
+
+/* ul.success li {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  list-style: none;
+}
+
+ul.error li {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  list-style: none;
+} */
+
+/* SIGNIN */
+.form-signin {
+  width: 370px;
+  padding: 15px;
+  margin: 0 auto;
+  height: 570px;
+}
+
+.form-signin {
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin input[type="text"] {
+  margin-top: 55px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-top-left-radius: 1;
+  border-top-right-radius: 1;
+}
+.form-signin input[type="password"] {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-top-left-radius: 1;
+  border-top-right-radius: 1;
+}
+
+/* SIGNIN END */
+
+/*FOOTER START*/
+
+.footer {
+	background-color: #7AADF1;
+  width: 100%;
+	color: white;
+	padding: 30px 0 30px;
+}
+
+.footer h1 {
+	font-family: 'Times New Roman';
+	font-size: 1.5em;
+}
+
+.footer p {
+	font-size: 0.9em;
+	color: #f2f2f2;
+}
+
+.footer a {
+	color: #f2f2f2;
+}
+
+
+/* footer end */
+
+
+.header{
+	padding: 565px 0 60px;
+	background: url(https://images.wallpaperscraft.com/image/volkswagen_golf_mk1_yellow_front_view_107928_1920x1080.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: auto;
+}
+
+.header .btn {
+	padding: 5px 50px 5px 50px;
+	border-radius: 0;
+}

@@ -1,0 +1,44 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "College Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevinKerin/kjs-webdesign.git"
+  },
+  "author": "Johnathan Munster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevinKerin/kjs-webdesign/issues"
+  },
+  "homepage": "https://github.com/KevinKerin/kjs-webdesign#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "debug": "*",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-messages": "*",
+    "express-session": "^1.15.6",
+    "express-validator": "*",
+    "jsonwebtoken": "^8.4.0",
+    "mongodb": "*",
+    "mongoose": "^5.3.12",
+    "morgan": "*",
+    "multer": "*",
+    "nodemailer": "^4.6.8",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "serve-favicon": "*",
+    "shortid": "^2.2.14"
+  }
+}
