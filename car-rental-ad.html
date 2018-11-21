@@ -12,9 +12,9 @@
   </head>
 
   <body>
-
+  <div id="wrapper">
     <!-- The four columns -->
-      <div class="contain">
+      <div class="contain" id="pics">
         <div class="row">
           <div class="column">
             <img src="images/img_car1.jpg" alt="Car Pic 1" style="width:100%" onclick="myFunction(this);">
@@ -39,11 +39,12 @@
         </div>
       </div>
 
-      <!--The div element for the map -->
-      <div id="map"></div>
 
-      <div class="contain" id="rental-details">
-        <div class="date-time">
+      <div id="map"></div>
+  </div>
+
+    <div id="wrapper2">
+      <div class="contain" id="date-time">
           <h2 id="prices-banner">Rent this car</h2>
           <div id="prices">
             <p><span style="text-decoration: underline">€35 per day</span> | <span style="text-decoration: underline">€6 per hour</span> | <span style="text-decoration: underline">12c per minute</span></p>
@@ -78,15 +79,16 @@
               Comment:
               <input type="text" name="Comment" placeholder="Comment" size="30"><br /><br />
 
-              <input type="submit" value="Send">
+              <input type="submit" value="Send" id="submit">
 
               <input type="reset" value="Reset" id="reset">
 
           </form>
         </div>
-      </div>
 
-      <div class="contain">
+  
+
+      <div class="contain" id="contact">
         <h2 id="contact-title">Want to contact Jason?</h2>
         <p class="email-phone">Email: </p>
         <div style="display: none;" id="hiddenEmail" class="email-phone">jason.bloggs@gmail.com</div>
@@ -95,8 +97,11 @@
         <div style="display: none;" id="hiddenPh" class="email-phone">086-4238251</div>
         <a href="#" onclick="$('#hiddenPh').show(); $(this).hide();" class="email-phone">Click here to show phone number</a>
       </div>
+    </div>
 
 
+
+    <div id="wrapper3">
       <div id="calendar">
         <table>
           <tr>
@@ -426,6 +431,15 @@
               <input type="checkbox" name="time" value="23">23 <br />
             </form>
       </div>
+    </div>
+
+  <div id="wrapper4" style="background-color: red; margin-top: 1000px;">
+    <div class="tester" style="width: 600px; float: left;">
+    </div>
+    <div class="tester" style="margin-left: 620px;">
+
+    </div>
+  </div>
 
 
 
@@ -483,7 +497,9 @@
             document.getElementById('map'), {zoom: 12, center: spire});
         // The marker, positioned at the Spire
         var marker = new google.maps.Marker({position: spire, map: map});
+
       }
+
 
       var calc = document.getElementById("calc");
 
@@ -537,8 +553,6 @@
           document.getElementById('cost-form').value = '€' + totalCost;
 
       })
-
-
 
       function parseDate(input) {
         var parts = input.match(/(\d+)/g);
