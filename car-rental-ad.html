@@ -42,42 +42,45 @@
       <!--The div element for the map -->
       <div id="map"></div>
 
-      <div class="contain">
+      <div class="contain" id="rental-details">
         <div class="date-time">
-          Pickup Date + Time:<input id="pickup-date" type="datetime-local" name="task_date" /><br />
-          Return Date + Time:<input id="return-date" type="datetime-local" name="task_date" /><br />
-          <button id="calc">Calculate Hours</button>
+          <h2 id="prices-banner">Rent this car</h2>
+          <div id="prices">
+            <p><span style="text-decoration: underline">€35 per day</span> | <span style="text-decoration: underline">€6 per hour</span> | <span style="text-decoration: underline">12c per minute</span></p>
+          </div>
           <br />
-          <button id="calc-cost" name="button">Calculate Cost</button>
+          Pickup Date + Time: <input id="pickup-date" type="datetime-local" name="task_date" /><br />
+          Return Date + Time: <input id="return-date" type="datetime-local" name="task_date" /><br />
+          <button id="calc">Calculate Hours & Cost</button>
+          <br />
 
-          <p>Jason's daily Rate is €<span id="daily-rate">35</span>, hourly rate is €<span id="hourly-rate">6</span>,
-             and per minute rate is €<span id="minutely-rate">0.12</span>.</p>
+
 
           <p id="rental-cost"></p>
 
           <form action="MAILTO:jason.bloggs@gmail.com" method="post" enctype="text/plain">
 
-              Name:<br />
+              Name:
               <input type="text" name="Name" placeholder="Name"><br />
 
-              E-mail:<br />
+              E-mail:
               <input type="text" name="Email" placeholder="Email"><br />
 
-              Pickup Date + Time:<br />
+              Pickup Date + Time:
               <input id="pickup-form" type="text" name="Pickup" placeholder="Pickup Date + Time" value=""><br />
 
-              Return Date + Time:<br />
+              Return Date + Time:
               <input id="return-form" type="text" name="Return" placeholder="Return Date + Time" value=""><br />
 
-              Cost:<br />
+              Cost:
               <input id="cost-form" type="text" name="Cost" placeholder="Cost" value=""><br />
 
-              Comment:<br />
+              Comment:
               <input type="text" name="Comment" placeholder="Comment" size="30"><br /><br />
 
               <input type="submit" value="Send">
 
-              <input type="reset" value="Reset">
+              <input type="reset" value="Reset" id="reset">
 
           </form>
         </div>
@@ -386,17 +389,17 @@
           </tr>
 
           <tr>
-              <td><input type="checkbox" name="time" value="mon00" class="mon-00 messageCheckbox" onchange="isChecked(#mon-00, 'sub1')">00</td>
-              <td><input type="checkbox" name="time" value="tue00" class="tue-00 messageCheckbox">00</td>
-              <td><input type="checkbox" name="time" value="wed00" class="wed-00 messageCheckbox">00</td>
-              <td><input type="checkbox" name="time" value="thu00" class="thu-00 messageCheckbox">00</td>
-              <td><input type="checkbox" name="time" value="fri00" class="fri-00 messageCheckbox">00</td>
-              <td><input type="checkbox" name="time" value="sat00" class="sat-00 messageCheckbox">00</td>
-              <td><input type="checkbox" name="time" value="sun00" class="sun-00 messageCheckbox">00</td>
+              <td><input type="checkbox" name="time" value="mon00" class="mon-00 message-checkbox">00</td>
+              <td><input type="checkbox" name="time" value="tue00" class="tue-00 message-checkbox">00</td>
+              <td><input type="checkbox" name="time" value="wed00" class="wed-00 message-checkbox">00</td>
+              <td><input type="checkbox" name="time" value="thu00" class="thu-00 message-checkbox">00</td>
+              <td><input type="checkbox" name="time" value="fri00" class="fri-00 message-checkbox">00</td>
+              <td><input type="checkbox" name="time" value="sat00" class="sat-00 message-checkbox">00</td>
+              <td><input type="checkbox" name="time" value="sun00" class="sun-00 message-checkbox">00</td>
           </tr>
         </table>
 
-        <button type="button" name="button" id="calendarChangeButton">Make Changes</button></br>
+        <button type="button" name="button" id="calendar-change-button">Make Changes</button></br>
 
               <input type="checkbox" name="time" value="01">01 <br />
               <input type="checkbox" name="time" value="02">02 <br />
@@ -446,6 +449,31 @@
 			}
 
 
+    /*  $('input:checkbox').change(function(){
+        if($(this).is(":checked")) {
+        $('div.menuitem').addClass("colour");
+        }
+        else {
+        $('div.menuitem').removeClass("colour");
+        }
+      });*/
+
+      var calendarChangeButton = document.getElementById("calendar-change-button");
+
+      calendarChangeButton.addEventListener("click", function updateCalendar(){
+        var time = document.getElementByClassName('message-checkbox');
+
+        if(time.checked){
+          time.addClass("colour");
+        }
+        else{
+          time.removeClass("colour");
+        }
+
+      })
+
+
+
       // Initialize and add the map
       function initMap() {
         // The location of the Spire
@@ -475,6 +503,8 @@
           var pickupDateForm = parseDate(pickupDate);
           var returnDateForm = parseDate(returnDate);
 
+
+
           document.getElementById("pickup-form").value = pickupDateForm;
           document.getElementById("return-form").value = returnDateForm;
 
@@ -484,40 +514,28 @@
           totalHours = Math.floor((dayDiff%days) / hours);
           totalMinutes = Math.floor((dayDiff%hours) / minutes);
 
+          var dailyCost = dailyRate * totalDays,
+              hourlyCost = hourlyRate * totalHours,
+              minutelyCost = minutelyRate * totalMinutes,
+              totalCost = dailyCost + hourlyCost + minutelyCost;
+              console.log(totalDays + " " + totalHours + " " + totalMinutes);
+              console.log(dailyCost);
+              console.log(hourlyCost);
+              console.log(minutelyCost);
+
           if(dayDiff < 0){
             console.log("Error");
           }
 
           alert("You have requested " + totalDays + " days, " + totalHours + " hours, and " + totalMinutes
            + " minutes rental. Click OK to calculate the cost.");
-      })
+          alert("The total price for your rental is €" + totalCost + ".");
 
-      var calcCost = document.getElementById('calc-cost');
+          document.getElementById('rental-cost').innerHTML = "Rental cost = €" + totalCost;
+          console.log('Pickup date: ' + pickupDate);
+          console.log('Return date: ' + returnDate);
+          document.getElementById('cost-form').value = '€' + totalCost;
 
-      calcCost.addEventListener("click", function() {
-        /*var dailyRate = document.getElementById("daily-rate").value,
-            hourlyRate = document.getElementById("hourly-rate").value,
-            minutelyRate = document.getElementById("minutely-rate").value;
-
-            console.log(Number(dailyRate));*/
-
-      //  var dailyRateDone = parseFloat(dailyRate);
-
-        var dailyCost = dailyRate * totalDays,
-            hourlyCost = hourlyRate * totalHours,
-            minutelyCost = minutelyRate * totalMinutes,
-            totalCost = dailyCost + hourlyCost + minutelyCost;
-            console.log(totalDays + " " + totalHours + " " + totalMinutes);
-            console.log(dailyCost);
-            console.log(hourlyCost);
-            console.log(minutelyCost);
-
-            alert("The total price for your rental is €" + totalCost + ".");
-
-            document.getElementById('rental-cost').innerHTML = "Rental cost = €" + totalCost;
-            console.log('Pickup date: ' + pickupDate);
-            console.log('Return date: ' + returnDate);
-            document.getElementById('cost-form').value = '€' + totalCost;
       })
 
 
@@ -538,11 +556,17 @@
       }
 
 
-      var calendarChange = document.getElementById('calendarChangeButton');
+      /*var calendarChange = document.getElementById('calendarChangeButton');
 
       calendarChange.addEventListener("click", function(){
         var checkedValue = document.querySelector('.messageCheckbox:checked').value;
         alert(checkedValue);
+      })*/
+
+      var reset = document.getElementById('reset');
+
+      reset.addEventListener("click", function(){
+        document.getElementById('rental-cost').style.display = none;
       })
 
 	</script>

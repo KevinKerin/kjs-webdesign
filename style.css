@@ -4,6 +4,17 @@
     background-color: #e0e0e0;
   }
 
+  body {
+    background-color: #F8F8F8;
+  }
+
+  #rental-cost {
+    height: 15px;
+  }
+
+  .colour {
+    background-color: red;
+  }
 
   table{
     border-collapse:collapse;
@@ -100,7 +111,31 @@
    border: 5px solid black;
    margin: 60px;
    border-radius: 10px;
+   background-color: white;
  }
+
+  #prices-banner {
+    padding-bottom: 15px;
+    border-bottom: black 5px solid;
+  }
+
+  #prices {
+    font-family: arial;
+    font-size: 14pt;
+    border-bottom: black 5px solid;
+    font-weight: bold;
+  }
+
+ #rental-details {
+   text-align: center;
+ }
+
+ #rental-details input[type="text"] {
+   padding: 4px;
+   margin: 2px;
+ }
+
+
 
   #map {
     height: 400px;  /* The height is 400 pixels */
@@ -108,7 +143,9 @@
     position: absolute;
     right: 60px;
     top: 60px;
-         }
+    border: 2px solid black;
+    border-radius: 5%;
+  }
 
 
 
