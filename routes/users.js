@@ -103,7 +103,7 @@ router.post('/signup', upload.single('profileimage'), function (req, res, next) 
         req.flash('success', 'You are now registered and can signin');
 
         res.location('/');
-        res.redirect('/');
+        res.redirect('signin');
     }
 });
 

@@ -1,52 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <!--Required Meta Tags-->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <![endif]-->
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!--CSS for BS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/signin.css">
-    <title>Rent a Car</title>
-
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="/"><i class="fa fa-car" aria-hidden="true"></i> Rent a Car</a>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <!-- start of contact and about section -->
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Contact <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-          <!-- end of contact and about section -->
-          <!-- start of login and register (pushed right) -->
-          <ul class="navbar-nav ml-auto ">
-            <li class="nav-item active">
-              <a class="nav-link" href="/users/signin"><i class="fa fa-sign-in" aria-hidden="true"></i> Login <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/users/signup"> <i class="fa fa-user-plus" aria-hidden="true"></i> Register <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-          <!-- end of login and register -->
-        </div>
-    </nav> <!-- nav bar ends -->
+<% include ../views/header %>
 
   <!-- log in form -->
   <div class="container">
@@ -62,37 +14,5 @@
     </div>
     <!-- log in form finish -->
 
-    <!-- FOOTER START -->
+<% include ../views/footer %>
 
-<div class="footer">
-  <div class="container">
-
-    <div class="row">
-
-      <div class="col-lg-4 col-md-4">
-      <h1></i></h1>
-      <p>Since &copy; 2018</p>
-      </div>
-
-      <div class="col-lg-4 col-md-4">
-      <h1>Contact Us</h1>
-      <p></i> rentacar@hotmail.com</a></p>
-      </div>
-
-      <div class="col-lg-4 col-md-4">
-      <h1>Find out more about us:</h1>
-      <p><a href="/about">About</a></p>
-      </div>
-
-    </div>
-
-  </div>
-</div>
-
-<!-- FOOTER END -->
-  </body>
-  <!--jQuery, then Popper and then JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="/javascripts/bootstrap.js"></script>
-</html>

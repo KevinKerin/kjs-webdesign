@@ -24,11 +24,151 @@ ul.error li {
   list-style: none;
 } */
 
+/* Signup Start */
+
+@import url('https://fonts.googleapis.com/css?family=Railway');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+/* Main Image */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+}
+
+.intro {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  background: url(https://images.wallpaperscraft.com/image/volkswagen_golf_mk1_yellow_front_view_107928_1920x1080.jpg) no-repeat 50% 50%;
+  display: table;
+  top: 0;
+  background-size: cover;
+}
+
+.intro .inner {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  max-width: none;
+}
+
+.content {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  height: 0px;
+}
+
+.content h1 {
+  font-family: 'Railway', sans-serif;
+  color: #F9F3F4;
+  text-shadow: 0px 0px 300px #000;
+  font-size: 500%;
+}
+
+.btn {
+  border-radius: 9px;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  font-size: 130%;
+  padding: 10px 20px;
+  border: solid #036A81 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.btn:hover {
+  color: #fff;
+  border: solid #fff 3px;
+}
+
+/* Main Image End */
+
+/*Info*/
+
+.info {
+  padding: 100px 0 100px;
+  text-align: center;
+}
+
+.info h1 {
+  font-size: 2em;
+  color: #337ab7;
+  padding: 0 0 25px;
+  text-align: center;
+}
+
+.info p {
+  padding-bottom: 25px;
+}
+
+/*Info END*/
+
+#inputName {
+  margin-top: 55px;
+  margin-bottom: 5px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-top-left-radius: 1;
+  border-top-right-radius: 1;
+}
+
+#inputUsername {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-top-left-radius: 1;
+  border-top-right-radius: 1;
+}
+
+#inputEmail {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-top-left-radius: 1;
+  border-top-right-radius: 1;
+}
+
+#inputPassword {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-top-left-radius: 1;
+  border-top-right-radius: 1;
+}
+
+#confirmPassword {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-top-left-radius: 1;
+  border-top-right-radius: 1;
+}
+
+#inputImage {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-top-left-radius: 1;
+  border-top-right-radius: 1;
+}
+
+
+/* SIGNUP END */
+
+
 /* SIGNIN */
 .form-signin {
   width: 370px;
   padding: 15px;
-  margin: 0 auto;
+  margin: auto;
   height: 570px;
 }
 
@@ -90,18 +230,3 @@ ul.error li {
 
 /* footer end */
 
-
-.header{
-	padding: 565px 0 60px;
-	background: url(https://images.wallpaperscraft.com/image/volkswagen_golf_mk1_yellow_front_view_107928_1920x1080.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: auto;
-}
-
-.header .btn {
-	padding: 5px 50px 5px 50px;
-	border-radius: 0;
-}
