@@ -18,7 +18,9 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
 
-// const PORT = 5500; // you can change this if this port number is not available
+// const PORT = 3000; // you can change this if this port number is not available
+
+const port = process.env.PORT || 3000;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -124,5 +126,8 @@ app.use(function(err, req, res, next){
 // }
 // );
 
+app.listen(port, () =>{
+  console.log(`Server is up on port ${port}`);
+});
 
 module.exports = app;
