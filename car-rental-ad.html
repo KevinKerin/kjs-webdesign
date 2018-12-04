@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Anton|Fira+Sans" rel="stylesheet">
+
   </head>
 
   <body>
@@ -17,16 +19,16 @@
       <div class="contain" id="pics">
         <div class="row">
           <div class="column">
-            <img src="images/img_car1.jpg" alt="Car Pic 1" style="width:100%" onclick="myFunction(this);">
+            <img src="images/img_car01.jpg" alt="Front Left View" style="width:100%" onclick="myFunction(this);">
           </div>
           <div class="column">
-            <img src="images/img_car2.jpg" alt="Car Pic 2" style="width:100%" onclick="myFunction(this);">
+            <img src="images/img_car02.jpg" alt="Front Right View" style="width:100%" onclick="myFunction(this);">
           </div>
           <div class="column">
-            <img src="images/img_car3.jpg" alt="Car Pic 3" style="width:100%" onclick="myFunction(this);">
+            <img src="images/img_car03.jpg" alt="Back Right View" style="width:100%" onclick="myFunction(this);">
           </div>
           <div class="column">
-            <img src="images/img_car4.jpg" alt="Car Pic 4" style="width:100%" onclick="myFunction(this);">
+            <img src="images/img_car04.jpg" alt="Back Left View" style="width:100%" onclick="myFunction(this);">
           </div>
         </div>
 
@@ -44,6 +46,7 @@
   </div>
 
     <div id="wrapper2">
+      <img src="images/travel.jpg" alt="Travel" id="travel-img">
       <div class="contain" id="date-time">
           <h2 id="prices-banner">Rent this car</h2>
           <div id="prices">
@@ -51,389 +54,374 @@
           </div>
           <br />
           Pickup Date + Time: <input id="pickup-date" type="datetime-local" name="task_date" /><br />
-          Return Date + Time: <input id="return-date" type="datetime-local" name="task_date" /><br />
-          <button id="calc">Calculate Hours & Cost</button>
-          <br />
-
-
+          Return Date + Time: <input id="return-date" type="datetime-local" name="task_date" /><br /><br />
+          <button id="calc"><span id="calc-text">Calculate Hours & Cost</span></button>
 
           <p id="rental-cost"></p>
 
           <form action="MAILTO:jason.bloggs@gmail.com" method="post" enctype="text/plain">
 
-              Name:
-              <input type="text" name="Name" placeholder="Name"><br />
+              <p><label for="a">Name:</label>
+              <input id="a" type="text" name="Name" placeholder="Name"></p>
 
-              E-mail:
-              <input type="text" name="Email" placeholder="Email"><br />
+              <p><label for="b">E-mail:</label>
+              <input id="b" type="text" name="Email" placeholder="Email"></p>
 
-              Pickup Date + Time:
-              <input id="pickup-form" type="text" name="Pickup" placeholder="Pickup Date + Time" value=""><br />
+              <p><label for="pickup-form">Pickup Date + Time:</label>
+              <input id="pickup-form" type="text" name="Pickup" placeholder="Pickup Date + Time" value=""></p>
 
-              Return Date + Time:
-              <input id="return-form" type="text" name="Return" placeholder="Return Date + Time" value=""><br />
+              <p><label for="return-form">Return Date + Time:</label>
+              <input id="return-form" type="text" name="Return" placeholder="Return Date + Time" value=""></p>
 
-              Cost:
-              <input id="cost-form" type="text" name="Cost" placeholder="Cost" value=""><br />
+              <p><label for="cost-form">Cost:</label>
+              <input id="cost-form" type="text" name="Cost" placeholder="Cost" value=""></p>
 
-              Comment:
-              <input type="text" name="Comment" placeholder="Comment" size="30"><br /><br />
+              <p><label for="f">Comment:</label>
+              <input id="f" type="text" name="Comment" placeholder="Comment" size="30"></p>
 
-              <input type="submit" value="Send" id="submit">
+              <label></label><input type="submit" value="Send" id="submit" style="align: center;">
 
               <input type="reset" value="Reset" id="reset">
 
           </form>
         </div>
+
+
+      <div id="about-me">
+          <img src="images/jason.jpg" alt="Jason Bloggs" id="jason">
+          <div id="about-me-text">
+            <h2>Jason's Volkwagen Golf</h2>
+            <p style="font-style: italic;">"I've had this Golf for 4 years now, and it's never let me down. This little nipper is great for weekends away in the countryside, or a quick nip up to Belfast on the M1.
+            I work in the city so commute and don't need the car during the week. The car runs perfectly. There's an aux cable and iPhone charger in the glove box for your convenience.
+          Enjoy driving my baby around the place - bring her back in one piece!"</p>
+          </div>
+          <div id="line"></div><br /><br />
+        <div id="bottom-details">
+          <div id="details">
+            <h3 style="text-align: center;">Vehicle Details</h3>
+            <div id="detail-headings" style="font-weight: bold;">
+              Make:<br />
+              Model:<br />
+              Year:<br />
+              Engine Size:<br />
+              Mileage:
+            </div>
+            <div id="detail-answers">
+              Volkswagen<br />
+              Golf<br />
+              2012<br />
+              1.6TDI<br />
+              140,000km
+            </div>
+          </div>
+          <div id="features">
+            <h3 style="text-align: center;">Features</h3>
+            <p><img src="images/aircon.png" alt="Air Conditioning" class="icon">&nbsp; Air-Con</p>
+            <p><img src="images/charger.png" alt="Phone Charging" class="icon">&nbsp; Phone Charging Capability</p>
+            <p><img src="images/aux.png" alt="Aux Cable" class="icon">&nbsp; Aux Input</p>
+          </div>
       </div>
 
-    <div id="wrapper3">
-      <div class="contain" id="contact">
+    </div>
+  </div>
+
+  <div id="wrapper3">
+      <div id="contact">
         <h2 id="contact-title">Want to contact Jason?</h2>
-        <p class="email-phone">Email: </p>
+        <p class="email-phone"><img src="images/email.svg" alt="Email Icon"  class="icon">&nbsp; Email: </p>
         <div style="display: none;" id="hiddenEmail" class="email-phone">jason.bloggs@gmail.com</div>
-        <a href="#" onclick="$('#hiddenEmail').show(); $(this).hide();" class="email-phone">Click here to show email address</a>
-        <p class="email-phone">Phone Number: </p>
+        <a href="#/" onclick="$('#hiddenEmail').show(); $(this).hide();" class="email-phone">Click here to show email address</a>
+        <p class="email-phone"><img src="images/telephone.jpg" alt="Telephone Icon"  class="icon">&nbsp; Phone Number: </p>
         <div style="display: none;" id="hiddenPh" class="email-phone">086-4238251</div>
-        <a href="#" onclick="$('#hiddenPh').show(); $(this).hide();" class="email-phone">Click here to show phone number</a>
+        <a href="#/" onclick="$('#hiddenPh').show(); $(this).hide();" class="email-phone">Click here to show phone number</a>
       </div>
-    </div>
 
-
-
-
-    <div id="wrapper4">
-      <div id="calendar">
-        <table>
-          <tr>
-            <th></th>
-            <th>Mon</th>
-            <th>Tue</th>
-            <th>Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
-            <th>Sat</th>
-            <th>Sun</th>
-          </tr>
-
-          <tr>
-            <td>00:00</td>
-            <td id="mon-00"></td>
-            <td id="tue-00"></td>
-            <td id="wed-00"></td>
-            <td id="thu-00"></td>
-            <td id="fri-00"></td>
-            <td id="sat-00"></td>
-            <td id="sun-00"></td>
-          </tr>
-
-          <tr>
-            <td>01:00</td>
-            <td id="mon-01"></td>
-            <td id="tue-01"></td>
-            <td id="wed-01"></td>
-            <td id="thu-01"></td>
-            <td id="fri-01"></td>
-            <td id="sat-01"></td>
-            <td id="sun-01"></td>
-          </tr>
-
-          <tr>
-            <td>02:00</td>
-            <td id="mon-02"></td>
-            <td id="tue-02"></td>
-            <td id="wed-02"></td>
-            <td id="thu-02"></td>
-            <td id="fri-02"></td>
-            <td id="sat-02"></td>
-            <td id="sun-02"></td>
-          </tr>
-
-          <tr>
-            <td>03:00</td>
-            <td id="mon-03"></td>
-            <td id="tue-03"></td>
-            <td id="wed-03"></td>
-            <td id="thu-03"></td>
-            <td id="fri-03"></td>
-            <td id="sat-03"></td>
-            <td id="sun-03"></td>
-          </tr>
-
-          <tr>
-            <td>04:00</td>
-            <td id="mon-04"></td>
-            <td id="tue-04"></td>
-            <td id="wed-04"></td>
-            <td id="thu-04"></td>
-            <td id="fri-04"></td>
-            <td id="sat-04"></td>
-            <td id="sun-04"></td>
-          </tr>
-
-          <tr>
-            <td>05:00</td>
-            <td id="mon-05"></td>
-            <td id="tue-05"></td>
-            <td id="wed-05"></td>
-            <td id="thu-05"></td>
-            <td id="fri-05"></td>
-            <td id="sat-05"></td>
-            <td id="sun-05"></td>
-          </tr>
-
-          <tr>
-            <td>06:00</td>
-            <td id="mon-06"></td>
-            <td id="tue-06"></td>
-            <td id="wed-06"></td>
-            <td id="thu-06"></td>
-            <td id="fri-06"></td>
-            <td id="sat-06"></td>
-            <td id="sun-06"></td>
-          </tr>
-
-          <tr>
-            <td>07:00</td>
-            <td id="mon-07"></td>
-            <td id="tue-07"></td>
-            <td id="wed-07"></td>
-            <td id="thu-07"></td>
-            <td id="fri-07"></td>
-            <td id="sat-07"></td>
-            <td id="sun-07"></td>
-          </tr>
-
-          <tr>
-            <td>08:00</td>
-            <td id="mon-08"></td>
-            <td id="tue-08"></td>
-            <td id="wed-08"></td>
-            <td id="thu-08"></td>
-            <td id="fri-08"></td>
-            <td id="sat-08"></td>
-            <td id="sun-08"></td>
-          </tr>
-
-          <tr>
-            <td>09:00</td>
-            <td id="mon-09"></td>
-            <td id="tue-09"></td>
-            <td id="wed-09"></td>
-            <td id="thu-09"></td>
-            <td id="fri-09"></td>
-            <td id="sat-09"></td>
-            <td id="sun-09"></td>
-          </tr>
-
-          <tr>
-            <td>10:00</td>
-            <td id="mon-10"></td>
-            <td id="tue-10"></td>
-            <td id="wed-10"></td>
-            <td id="thu-10"></td>
-            <td id="fri-10"></td>
-            <td id="sat-10"></td>
-            <td id="sun-10"></td>
-          </tr>
-
-          <tr>
-            <td>11:00</td>
-            <td id="mon-11"></td>
-            <td id="tue-11"></td>
-            <td id="wed-11"></td>
-            <td id="thu-11"></td>
-            <td id="fri-11"></td>
-            <td id="sat-11"></td>
-            <td id="sun-11"></td>
-          </tr>
-
-          <tr>
-            <td>12:00</td>
-            <td id="mon-12"></td>
-            <td id="tue-12"></td>
-            <td id="wed-12"></td>
-            <td id="thu-12"></td>
-            <td id="fri-12"></td>
-            <td id="sat-12"></td>
-            <td id="sun-12"></td>
-          </tr>
-
-          <tr>
-            <td>13:00</td>
-            <td id="mon-13"></td>
-            <td id="tue-13"></td>
-            <td id="wed-13"></td>
-            <td id="thu-13"></td>
-            <td id="fri-13"></td>
-            <td id="sat-13"></td>
-            <td id="sun-13"></td>
-          </tr>
-
-          <tr>
-            <td>14:00</td>
-            <td id="mon-14"></td>
-            <td id="tue-14"></td>
-            <td id="wed-14"></td>
-            <td id="thu-14"></td>
-            <td id="fri-14"></td>
-            <td id="sat-14"></td>
-            <td id="sun-14"></td>
-          </tr>
-
-          <tr>
-            <td>15:00</td>
-            <td id="mon-15"></td>
-            <td id="tue-15"></td>
-            <td id="wed-15"></td>
-            <td id="thu-15"></td>
-            <td id="fri-15"></td>
-            <td id="sat-15"></td>
-            <td id="sun-15"></td>
-          </tr>
-
-          <tr>
-            <td>16:00</td>
-            <td id="mon-16"></td>
-            <td id="tue-16"></td>
-            <td id="wed-16"></td>
-            <td id="thu-16"></td>
-            <td id="fri-16"></td>
-            <td id="sat-16"></td>
-            <td id="sun-16"></td>
-          </tr>
-
-          <tr>
-            <td>17:00</td>
-            <td id="mon-17"></td>
-            <td id="tue-17"></td>
-            <td id="wed-17"></td>
-            <td id="thu-17"></td>
-            <td id="fri-17"></td>
-            <td id="sat-17"></td>
-            <td id="sun-17"></td>
-          </tr>
-
-          <tr>
-            <td>18:00</td>
-            <td id="mon-18"></td>
-            <td id="tue-18"></td>
-            <td id="wed-18"></td>
-            <td id="thu-18"></td>
-            <td id="fri-18"></td>
-            <td id="sat-18"></td>
-            <td id="sun-18"></td>
-          </tr>
-
-          <tr>
-            <td>19:00</td>
-            <td id="mon-19"></td>
-            <td id="tue-19"></td>
-            <td id="wed-19"></td>
-            <td id="thu-19"></td>
-            <td id="fri-19"></td>
-            <td id="sat-19"></td>
-            <td id="sun-19"></td>
-          </tr>
-
-          <tr>
-            <td>20:00</td>
-            <td id="mon-20"></td>
-            <td id="tue-20"></td>
-            <td id="wed-20"></td>
-            <td id="thu-20"></td>
-            <td id="fri-20"></td>
-            <td id="sat-20"></td>
-            <td id="sun-20"></td>
-          </tr>
-
-          <tr>
-            <td>21:00</td>
-            <td id="mon-21"></td>
-            <td id="tue-21"></td>
-            <td id="wed-21"></td>
-            <td id="thu-21"></td>
-            <td id="fri-21"></td>
-            <td id="sat-21"></td>
-            <td id="sun-21"></td>
-          </tr>
-
-          <tr>
-            <td>22:00</td>
-            <td id="mon-22"></td>
-            <td id="tue-22"></td>
-            <td id="wed-22"></td>
-            <td id="thu-22"></td>
-            <td id="fri-22"></td>
-            <td id="sat-22"></td>
-            <td id="sun-22"></td>
-          </tr>
-
-          <tr>
-            <td>23:00</td>
-            <td id="mon-23"></td>
-            <td id="tue-23"></td>
-            <td id="wed-23"></td>
-            <td id="thu-23"></td>
-            <td id="fri-23"></td>
-            <td id="sat-23"></td>
-            <td id="sun-23"></td>
-          </tr>
-
-
-        </table>
-
-        <table>
-          <tr>
-            <td>Mon</td>
-            <td>Tue</td>
-            <td>Wed</td>
-            <td>Thu</td>
-            <td>Fri</td>
-            <td>Sat</td>
-            <td>Sun</td>
-          </tr>
-
-          <tr>
-              <td><input type="checkbox" name="time" value="mon00" class="mon-00 message-checkbox">00</td>
-              <td><input type="checkbox" name="time" value="tue00" class="tue-00 message-checkbox">00</td>
-              <td><input type="checkbox" name="time" value="wed00" class="wed-00 message-checkbox">00</td>
-              <td><input type="checkbox" name="time" value="thu00" class="thu-00 message-checkbox">00</td>
-              <td><input type="checkbox" name="time" value="fri00" class="fri-00 message-checkbox">00</td>
-              <td><input type="checkbox" name="time" value="sat00" class="sat-00 message-checkbox">00</td>
-              <td><input type="checkbox" name="time" value="sun00" class="sun-00 message-checkbox">00</td>
-          </tr>
-        </table>
-
-        <button type="button" name="button" id="calendar-change-button">Make Changes</button></br>
-
-              <input type="checkbox" name="time" value="01">01 <br />
-              <input type="checkbox" name="time" value="02">02 <br />
-              <input type="checkbox" name="time" value="03">03 <br />
-              <input type="checkbox" name="time" value="04">04 <br />
-              <input type="checkbox" name="time" value="05">05 <br />
-              <input type="checkbox" name="time" value="06">06 <br />
-              <input type="checkbox" name="time" value="07">07 <br />
-              <input type="checkbox" name="time" value="08">08 <br />
-              <input type="checkbox" name="time" value="09">09 <br />
-              <input type="checkbox" name="time" value="10">10 <br />
-              <input type="checkbox" name="time" value="11">11 <br />
-              <input type="checkbox" name="time" value="12">12 <br />
-              <input type="checkbox" name="time" value="13">13 <br />
-              <input type="checkbox" name="time" value="14">14 <br />
-              <input type="checkbox" name="time" value="15">15 <br />
-              <input type="checkbox" name="time" value="16">16 <br />
-              <input type="checkbox" name="time" value="17">17 <br />
-              <input type="checkbox" name="time" value="18">18 <br />
-              <input type="checkbox" name="time" value="19">19 <br />
-              <input type="checkbox" name="time" value="20">20 <br />
-              <input type="checkbox" name="time" value="21">21 <br />
-              <input type="checkbox" name="time" value="22">22 <br />
-              <input type="checkbox" name="time" value="23">23 <br />
-            </form>
+      <div id="parking-info">
+        <h2>Parking Information</h2>
+        <p>Please park within 500 metres of Jason's properly on<br />Griffith
+        Avenue.</p>
       </div>
-    </div>
 
+        <div id="calendar">
+          <h3 style="text-align: center;">Car Availability Calendar</h3>
+          <table>
+            <tr>
+              <th></th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+              <th>Sun</th>
+            </tr>
+
+            <tr>
+              <td>00:00</td>
+              <td id="mon-00"></td>
+              <td id="tue-00"></td>
+              <td id="wed-00"></td>
+              <td id="thu-00"></td>
+              <td id="fri-00"></td>
+              <td id="sat-00"></td>
+              <td id="sun-00"></td>
+            </tr>
+
+            <tr>
+              <td>01:00</td>
+              <td id="mon-01"></td>
+              <td id="tue-01"></td>
+              <td id="wed-01"></td>
+              <td id="thu-01"></td>
+              <td id="fri-01"></td>
+              <td id="sat-01"></td>
+              <td id="sun-01"></td>
+            </tr>
+
+            <tr>
+              <td>02:00</td>
+              <td id="mon-02"></td>
+              <td id="tue-02"></td>
+              <td id="wed-02"></td>
+              <td id="thu-02"></td>
+              <td id="fri-02"></td>
+              <td id="sat-02"></td>
+              <td id="sun-02"></td>
+            </tr>
+
+            <tr>
+              <td>03:00</td>
+              <td id="mon-03"></td>
+              <td id="tue-03"></td>
+              <td id="wed-03"></td>
+              <td id="thu-03"></td>
+              <td id="fri-03"></td>
+              <td id="sat-03"></td>
+              <td id="sun-03"></td>
+            </tr>
+
+            <tr>
+              <td>04:00</td>
+              <td id="mon-04"></td>
+              <td id="tue-04"></td>
+              <td id="wed-04"></td>
+              <td id="thu-04"></td>
+              <td id="fri-04"></td>
+              <td id="sat-04"></td>
+              <td id="sun-04"></td>
+            </tr>
+
+            <tr>
+              <td>05:00</td>
+              <td id="mon-05"></td>
+              <td id="tue-05"></td>
+              <td id="wed-05"></td>
+              <td id="thu-05"></td>
+              <td id="fri-05"></td>
+              <td id="sat-05"></td>
+              <td id="sun-05"></td>
+            </tr>
+
+            <tr>
+              <td>06:00</td>
+              <td id="mon-06"></td>
+              <td id="tue-06"></td>
+              <td id="wed-06"></td>
+              <td id="thu-06"></td>
+              <td id="fri-06"></td>
+              <td id="sat-06"></td>
+              <td id="sun-06"></td>
+            </tr>
+
+            <tr>
+              <td>07:00</td>
+              <td id="mon-07"></td>
+              <td id="tue-07"></td>
+              <td id="wed-07"></td>
+              <td id="thu-07"></td>
+              <td id="fri-07"></td>
+              <td id="sat-07"></td>
+              <td id="sun-07"></td>
+            </tr>
+
+            <tr>
+              <td>08:00</td>
+              <td id="mon-08"></td>
+              <td id="tue-08"></td>
+              <td id="wed-08"></td>
+              <td id="thu-08"></td>
+              <td id="fri-08"></td>
+              <td id="sat-08"></td>
+              <td id="sun-08"></td>
+            </tr>
+
+            <tr>
+              <td>09:00</td>
+              <td id="mon-09" class="unavailable"></td>
+              <td id="tue-09"></td>
+              <td id="wed-09"></td>
+              <td id="thu-09"></td>
+              <td id="fri-09"></td>
+              <td id="sat-09"></td>
+              <td id="sun-09"></td>
+            </tr>
+
+            <tr>
+              <td>10:00</td>
+              <td id="mon-10" class="unavailable"></td>
+              <td id="tue-10"></td>
+              <td id="wed-10"></td>
+              <td id="thu-10"></td>
+              <td id="fri-10"></td>
+              <td id="sat-10"></td>
+              <td id="sun-10"></td>
+            </tr>
+
+            <tr>
+              <td>11:00</td>
+              <td id="mon-11" class="unavailable"></td>
+              <td id="tue-11"></td>
+              <td id="wed-11"></td>
+              <td id="thu-11"></td>
+              <td id="fri-11"></td>
+              <td id="sat-11"></td>
+              <td id="sun-11"></td>
+            </tr>
+
+            <tr>
+              <td>12:00</td>
+              <td id="mon-12" class="unavailable"></td>
+              <td id="tue-12"></td>
+              <td id="wed-12"></td>
+              <td id="thu-12" class="unavailable"></td>
+              <td id="fri-12"></td>
+              <td id="sat-12"></td>
+              <td id="sun-12"></td>
+            </tr>
+
+            <tr>
+              <td>13:00</td>
+              <td id="mon-13" class="unavailable"></td>
+              <td id="tue-13"></td>
+              <td id="wed-13"></td>
+              <td id="thu-13" class="unavailable"></td>
+              <td id="fri-13"></td>
+              <td id="sat-13"></td>
+              <td id="sun-13"></td>
+            </tr>
+
+            <tr>
+              <td>14:00</td>
+              <td id="mon-14" class="unavailable"></td>
+              <td id="tue-14"></td>
+              <td id="wed-14"></td>
+              <td id="thu-14" class="unavailable"></td>
+              <td id="fri-14"></td>
+              <td id="sat-14"></td>
+              <td id="sun-14"></td>
+            </tr>
+
+            <tr>
+              <td>15:00</td>
+              <td id="mon-15" class="unavailable"></td>
+              <td id="tue-15"></td>
+              <td id="wed-15"></td>
+              <td id="thu-15"></td>
+              <td id="fri-15"></td>
+              <td id="sat-15" class="unavailable"></td>
+              <td id="sun-15"></td>
+            </tr>
+
+            <tr>
+              <td>16:00</td>
+              <td id="mon-16" class="unavailable"></td>
+              <td id="tue-16"></td>
+              <td id="wed-16"></td>
+              <td id="thu-16"></td>
+              <td id="fri-16"></td>
+              <td id="sat-16" class="unavailable"></td>
+              <td id="sun-16"></td>
+            </tr>
+
+            <tr>
+              <td>17:00</td>
+              <td id="mon-17" class="unavailable"></td>
+              <td id="tue-17"></td>
+              <td id="wed-17"></td>
+              <td id="thu-17"></td>
+              <td id="fri-17"></td>
+              <td id="sat-17" class="unavailable"></td>
+              <td id="sun-17"></td>
+            </tr>
+
+            <tr>
+              <td>18:00</td>
+              <td id="mon-18"></td>
+              <td id="tue-18"></td>
+              <td id="wed-18"></td>
+              <td id="thu-18"></td>
+              <td id="fri-18"></td>
+              <td id="sat-18" class="unavailable"></td>
+              <td id="sun-18"></td>
+            </tr>
+
+            <tr>
+              <td>19:00</td>
+              <td id="mon-19"></td>
+              <td id="tue-19"></td>
+              <td id="wed-19"></td>
+              <td id="thu-19"></td>
+              <td id="fri-19"></td>
+              <td id="sat-19" class="unavailable"></td>
+              <td id="sun-19"></td>
+            </tr>
+
+            <tr>
+              <td>20:00</td>
+              <td id="mon-20"></td>
+              <td id="tue-20"></td>
+              <td id="wed-20"></td>
+              <td id="thu-20"></td>
+              <td id="fri-20"></td>
+              <td id="sat-20" class="unavailable"></td>
+              <td id="sun-20"></td>
+            </tr>
+
+            <tr>
+              <td>21:00</td>
+              <td id="mon-21"></td>
+              <td id="tue-21"></td>
+              <td id="wed-21"></td>
+              <td id="thu-21"></td>
+              <td id="fri-21"></td>
+              <td id="sat-21" class="unavailable"></td>
+              <td id="sun-21"></td>
+            </tr>
+
+            <tr>
+              <td>22:00</td>
+              <td id="mon-22"></td>
+              <td id="tue-22"></td>
+              <td id="wed-22"></td>
+              <td id="thu-22"></td>
+              <td id="fri-22"></td>
+              <td id="sat-22" class="unavailable"></td>
+              <td id="sun-22"></td>
+            </tr>
+
+            <tr>
+              <td>23:00</td>
+              <td id="mon-23"></td>
+              <td id="tue-23"></td>
+              <td id="wed-23"></td>
+              <td id="thu-23"></td>
+              <td id="fri-23"></td>
+              <td id="sat-23" class="unavailable"></td>
+              <td id="sun-23"></td>
+            </tr>
+          </table>
+    </div>
+  </div>
 
 
 
@@ -541,7 +529,6 @@
            + " minutes rental. Click OK to calculate the cost.");
           alert("The total price for your rental is €" + totalCost + ".");
 
-          document.getElementById('rental-cost').innerHTML = "Rental cost = €" + totalCost;
           console.log('Pickup date: ' + pickupDate);
           console.log('Return date: ' + returnDate);
           document.getElementById('cost-form').value = '€' + totalCost;

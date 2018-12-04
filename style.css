@@ -6,6 +6,8 @@
 
   body {
     background-color: #F8F8F8;
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
   }
 
   #wrapper {
@@ -15,8 +17,8 @@
 
   #pics {
     position: absolute;
-    top: 40px;
-    left: 10px;
+    top: 30px;
+    left: 60px;
     z-index: 10;
   }
 
@@ -25,13 +27,84 @@
   }
 
   #map {
-    height: 650px;
+    height: 700px;
     width: 100%;
     position: absolute;
   }
 
-  #rental-cost {
-    height: 15px;
+  #about-me {
+    position: relative;
+    z-index: 3;
+    width: 45%;
+    float: right;
+    margin-right: 150px;
+    margin-top: 40px;
+    height: 470px;
+    border: 5px solid black;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  #about-me-text {
+    position: relative;
+    height: 250px;
+    width: 50%;
+    float: right;
+    top: 5px;
+    right: 30px;
+    font-family: 'Fira Sans', sans-serif;
+  }
+
+
+
+  #line {
+    top: 45px;
+    position: relative;
+    height: 5px;
+    width: 100%;
+    background-color: black;
+  }
+
+  #bottom-details {
+    width: 100%;
+    background-color: crimson;
+    clear: none;
+  }
+
+  #details {
+    width: 30%;
+    float:left;
+    height: 120px;
+    margin-left: 45px;
+  }
+
+  #detail-headings {
+    float: left;
+  }
+
+  #detail-answers {
+    float: right;
+  }
+
+
+  #features {
+    width: 40%;
+    margin-left: 80px;
+    padding-bottom: 10px;
+    float:left;
+  }
+
+  .icon {
+    height: 20px;
+    width: 20px;
+  }
+
+  #jason {
+    height: 230px;
+    width: 230px;
+    position: relative;
+    top: 30px;
+    left: 40px;
   }
 
   .colour {
@@ -40,7 +113,9 @@
 
   table{
     border-collapse:collapse;
-    border:1px solid black;
+    border:2px solid black;
+    position: relative;
+    left: 75px;
   }
 
   #terms {
@@ -49,7 +124,7 @@
   }
 
   #contact-title {
-    text-align: center;
+    text-align: left;
   }
 
   .email-phone {
@@ -57,8 +132,8 @@
   }
 
   table td{
-  border:1px solid gray;
-  width: 30px;
+  border:2px solid black;
+  width: 35px;
   }
 
   .unavailable {
@@ -69,10 +144,7 @@
       box-sizing: border-box;
   }
 
-  body {
-      margin: 0;
-      font-family: Arial;
-  }
+
 
   /* The grid: Four equal columns that floats next to each other */
   .column {
@@ -129,7 +201,7 @@
 
  .contain{
    width: 450px;
-   height: 450px;
+   height: 470px;
    border: 5px solid black;
    margin: 40px;
    border-radius: 10px;
@@ -164,36 +236,98 @@
    height: 550px;
  }
 
+ #travel-img {
+   width: 100%;
+   height: 572px;
+   position: absolute;
+   opacity: 0.6;
+   z-index: 1;
+ }
+
  #wrapper3 {
    width: 100%;
-   height: 550px;
-   background-color: brown;
+   height: 400px;
+   margin-top: 50px;
+   background-color: #F8F8F8;
+   z-index: 1;
  }
 
  #contact {
    float: left;
+   width: 33%;
+   height: 450px;
+   padding-left: 70px;
+   background-color: #F8F8F8;
  }
 
- #rental-details input[type="text"] {
-   padding: 4px;
-   margin: 2px;
+#parking-info {
+  float: left;
+  height: 200px;
+  width: 33%;
+}
+
+
+#calendar {
+  float: right;
+  width: 33%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+#calendar tr {
+  height: 3px;
+}
+
+#date-time input[type="text"] {
+   padding: 3px;
+   margin: 1px;
  }
 
  #date-time {
    text-align: center;
+   position: absolute;
+   z-index: 11;
+   margin-left: 100px;
  }
 
+form {
+  display: table;
+  margin: 15px;
+}
+
+form p {
+  display: table-row;
+}
+
+form label {
+  display: table-cell;
+}
+
+form input {
+  display: table-cell;
+}
 
 
+ #calc {
+   height: 40px;
+   width: absolute;
+   background: #83def7;
+   border-radius: 10px;
+ }
 
+ #calc-text {
+   font-family: 'Fira Sans', sans-serif;
+   font-size: 15px;
+ }
 
+table {
+  padding-top: 30px;
+  border: 1px solid gray;
+  padding: 5px 0px;
+  font-size: 10pt;
+  background-color: #f9f7f7;
+}
 
-
-
-
-/*  #wrapper {
-      overflow: auto;
-      height: 600px;
-      background-color: red;
-      width: 100%;
-  }
+.unavailable {
+  background-color: red;
+}
