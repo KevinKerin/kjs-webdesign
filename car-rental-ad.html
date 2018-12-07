@@ -7,6 +7,12 @@
 
     <title>Rent Jason's Volkswagen Golf</title>
 
+
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Anton|Fira+Sans" rel="stylesheet">
@@ -14,6 +20,19 @@
   </head>
 
   <body>
+
+  <div id="header">
+    <a href="#"><img src="images/header-homepage.png" alt="Quick Car"></a> <a href="#"><img src="images/header-about.png" alt="About"></a>
+    <a href="#"><img src="images/header-contact.png" alt="Contact"></a><img src="images/header-bar.png" alt=""><a href="#"><img src="images/header-login.png" alt="Login"></a>
+    <a href="#"><img src="images/header-register.png" alt="Register"></a>
+  </div>
+
+    <a href="#" id="about"></a>
+    <a href="#" id="contact"></a>
+    <a href="#" id="login"></a>
+    <a href="#" id="register"></a>
+  </div>
+
   <div id="wrapper">
     <!-- The four columns -->
       <div class="contain" id="pics">
@@ -421,7 +440,13 @@
             </tr>
           </table>
     </div>
-  </div>
+</div>
+
+
+    <div id="footer">
+      <img src="images/footer.png" alt="Footer">
+    </div>
+
 
 
 
@@ -445,41 +470,43 @@
 			}
 
 
-    /*  $('input:checkbox').change(function(){
-        if($(this).is(":checked")) {
-        $('div.menuitem').addClass("colour");
-        }
-        else {
-        $('div.menuitem').removeClass("colour");
-        }
-      });*/
-
-      var calendarChangeButton = document.getElementById("calendar-change-button");
-
-      calendarChangeButton.addEventListener("click", function updateCalendar(){
-        var time = document.getElementByClassName('message-checkbox');
-
-        if(time.checked){
-          time.addClass("colour");
-        }
-        else{
-          time.removeClass("colour");
-        }
-
-      })
-
-
 
       // Initialize and add the map
       function initMap() {
-        // The location of the Spire
-        var spire = {lat: 53.3498, lng: -6.2603};
-        // The map, centered at the Spire
+        // The location of the jason
+        var jason = {lat: 53.362109, lng: -6.257270};
+        // The map, centered at the jason
         var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 12, center: spire});
-        // The marker, positioned at the Spire
-        var marker = new google.maps.Marker({position: spire, map: map});
+            document.getElementById('map'), {zoom: 14, center: {lat: 53.355888, lng: -6.278352}});
+        // The marker, positioned at the jason
+        var marker = new google.maps.Marker({position: jason, map: map});
 
+        var contentString =
+            '<h1>Jason\'s Volkswagen Golf</h1>'+'<h3>3 Fitzroy Avenue, Drumcondra</h3>'+
+            '<div>'+
+            '<p>2012 | 124,000km | 1.6TDI | Manual | 5 door | Hatchback</p>' +
+            '<p>Pick-up this car using cutting edge lockbox technology. <br />'+
+            'Simply bring your smartphone or smart device and generate <br />'+
+            'the unique code to unlock Jason\'s car. When returning, don\'t<br />'+
+            'forget to return the key in the lockbox as you found it. Take<br />'+
+            'pictures of the car before and after you rent for insurance purposes.<br />'+
+            '<img style="margin: 25px 0px 10px 50px;" src="images/img_car01.jpg" height="210" width="280">'
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: jason,
+          map: map,
+          title: "Jason's Volkswagen Golf"
+        });
+
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
       }
 
 
@@ -492,6 +519,7 @@
           returnDate;
 
       calc.addEventListener("click", function() {
+        console.log('Function has begun');
           var pickupDate = document.getElementById("pickup-date").value,
               returnDate = document.getElementById("return-date").value,
               days = 1000*3600*24,
