@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <!--Required Meta Tags-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!--CSS for BS -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Rent a Car</title>
+
+</head>
+
+<body>
+  <div id="header">
+    <h1 style="text-align:center;"><a href="index.html">Quick Car</a></h1>
+  </div>
+  <div id="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Who We Are</a></li>
+      <li><a id="active" href="contact.html">Get in Touch</a></li>
+    </ul>
+  </div>
+    <div class="contact">
+      <div class="article column1">
+        <h3 class="uniHeading">Social media:</h3>
+        <p class=mac>Facebook</p>
+        <p class=mac>Instagram</p>
+        <p class=mac>Twitter</p>
+        <p class=mac>WhatsApp</p>
+      </div>
+      <div class="article column2">
+        <h3 class="uniHeading">Address:</h3>
+        <p class="mac">Quick Car</p>
+        <p class="mac">Department of Computing</p>
+        <p class="mac">National College of Ireland</p>
+        <p class="mac">Dublin, Ireland</p>
+      </div>
+      <div class="article column3">
+        <h3 class="uniHeading">Phone Us:</h3>
+        <p class="mac">086 123 4567</p>
+      </div>
+    </div>
+      <div class="location">
+       <div id="map">
+       </div>
+      </div>
+      <div id="feature">
+        <div class="subscribe">
+            <h3>Subscribe to our weekly newsletter</h3>
+            <form>
+              <div class="lable">
+                <label for="name" class="title"></label>
+                <input type="text" id="name" name="name" placeholder="Name" /> </div>
+              <div class="lable">
+              <label for="email" class="title"></label>
+                <input type="email" id="email" name="email" placeholder="Email" /> </div>
+              <button class="button button1">Subscribe</button>
+            </form>
+        </div>
+      </div>
+
+      <div id="contform">
+      <form action="MAILTO:x17164796@student.ncirl.ie" method="post" enctype="text/plain">
+        <table>
+          <tr>
+            <td>What would you like to know about?</td>
+            <td>
+              <select>
+                <option>Wish to rent?</option>
+                <option>Wish to advertise?</option>
+                <option>General inquiries</option>
+                <option>Media inquiries</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" maxlength="50" placeholder="Name" /></td>
+          </tr>
+          <tr>
+            <td>Number:</td>
+            <td><input type="text" name="number" maxlength="10"placeholder="Number" /></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" placeholder="Email" /></td>
+          </tr>
+
+          <tr>
+            <td colspan="2">Write to Us:</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <textarea rows="25" cols="100" placeholder="Happy? Dissatisfied? Curious? Let us know!"></textarea>
+            </td>
+          </tr>
+          <tr>
+              <td><input class="button button1" type="submit" value="Submit" onclick="alert('Thank you for taking the time to write to us. We will be in touch shortly.');" /></td>
+          </tr>
+
+        </table>
+        </form>
+    </div>
+
+    <!--Javascript-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3m_4_-3nSH9_JrDQN621VvNfpNF7NQpg&callback=initMap" type="text/javascript"></script>
+     <footer id="footerUpdate"><p>Copyright of KK, JM, & SR&copy; 2018</p>
+    </footer>
+    <script type="text/javascript" src="newScript.js"></script>
+</body>
+
+</html>
