@@ -9,7 +9,6 @@
   "engines": {
     "node": "10.12.0"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KevinKerin/kjs-webdesign.git"
@@ -29,11 +28,11 @@
     "debug": "*",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "express-messages": "*",
+    "express-messages": "^1.0.1",
     "express-session": "^1.15.6",
     "express-validator": "*",
     "jsonwebtoken": "^8.4.0",
-    "mongodb": "*",
+    "mongodb": "^3.1.10",
     "mongoose": "^5.3.12",
     "morgan": "*",
     "multer": "*",

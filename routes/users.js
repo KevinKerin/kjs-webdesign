@@ -15,13 +15,14 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/signup', function (req, res, next) {
-    res.render('signup');
+    res.render('signup', {title: 'Signup'});
 });
 
 router.get('/signin', function (req, res, next) {
-    res.render('signin');
+    res.render('signin', {title: 'Signup'});
 });
 
+//passport control for signing in. 
 router.post('/signin', 
     passport.authenticate('local',{failureRedirect:'/users/signin', failureFlash: 'Invalid username or password'}), 
     function(req, res){
@@ -39,6 +40,7 @@ passport.deserializeUser(function(id, done){
     });
 });
 
+//locat strategy to control correct usernames + passwords
 passport.use(new LocalStrategy(function(username, password, done){
     User.getUserByUsername(username, function(err, user){
         if(err) throw err;
@@ -80,9 +82,12 @@ router.post('/signup', upload.single('profileimage'), function (req, res, next) 
     req.checkBody('password2', 'Password do not match').equals(req.body.password);
 
     //check Errors
+
+    //error handing for signing + registering
     var errors = req.validationErrors();
 
     if(errors){
+        console.log(errors);
         res.render('signup', {
             errors: errors
         });
@@ -101,7 +106,7 @@ router.post('/signup', upload.single('profileimage'), function (req, res, next) 
         });
 
         req.flash('success', 'You are now registered and can signin');
-
+    
         res.location('/');
         res.redirect('signin');
     }

@@ -1,8 +1,7 @@
 <% include ../views/header %>
 
   <!-- Sign Up form -->
-  <div class="container">
-      <!-- eror reporting goes here 1:06:02 -->
+  <div class="container"></div>
     <form action="/users/signup" method="POST" class="form-signin" enctype="multipart/form-data">
       <label for="inputName" class="sr-only">Name</label>
       <input type="text" id="inputName" class="form-control" placeholder="Name" name="name" required>
@@ -15,10 +14,13 @@
       <label for="inputImage" class="sr-only">Password</label>
       <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" name="password2" required>
       <label for="inputImage" class="sr-only">Password</label>
+      <p>Upload Licence</p>
       <input type="file" id="inputImage" class="form-control" name="profileimage">
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit", value="signup">Sign up</button>
     </form>
     </div>
     <!-- Sign up form finish -->
+
+
 
 <% include ../views/footer %>

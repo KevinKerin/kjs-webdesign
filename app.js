@@ -18,10 +18,12 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
 
+
 // const PORT = 3000; // you can change this if this port number is not available
 
 const port = process.env.PORT || 3000;
 
+//requiring the routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -50,7 +52,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-//Express Validator middleware
+//Express Validator middleware 
 app.use(expressValidator({
   errorFormatter: function(param, msg, value){
     var namespace = param.split('.'),
@@ -68,8 +70,8 @@ app.use(expressValidator({
   }
 }));
 
-//express messages middleware
-app.use(flash());
+//flash middleware
+app.use(require('connect-flash')());
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
   next();
@@ -114,17 +116,16 @@ app.use(function(err, req, res, next){
   });
 });
 
-// //connect to database
-// mongoose.connect('mongodb://localhost:27017/auth_tuts', { //replace this with you
-//   // useMongoClient: true
-// }, (err, db) => {
-//   if (err) {
-//     console.log("Couldn't connect to database");
-//   } else {
-//     console.log(`Connected To Database`);
-//   }
-// }
-// );
+//connect to database
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/project', {
+}, (err, db) => {
+  if (err) {
+    console.log("Couldn't connect to database");
+  } else {
+    console.log(`Connected To Database`);
+  }
+}
+);
 
 app.listen(port, () =>{
   console.log(`Server is up on port ${port}`);

@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-mongoose.connect('mongodb://localhost/project');
+mongoose.connect('mongodb://localhost/project' || process.env.MONGODB_URI);
 
 var db = mongoose.connection;
 

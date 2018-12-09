@@ -2,7 +2,7 @@
 
 /* Navbar End */
 
-/* ul.success li {
+.alert alert.success{
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
@@ -13,7 +13,7 @@
   list-style: none;
 }
 
-ul.error li {
+.alert alert.danger {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
@@ -22,7 +22,8 @@ ul.error li {
   background-color: #f2dede;
   border-color: #ebccd1;
   list-style: none;
-} */
+}
+
 
 /* Signup Start */
 
@@ -67,13 +68,14 @@ html, body {
   color: #F9F3F4;
   text-shadow: 0px 0px 300px #000;
   font-size: 500%;
+  padding-top: 145px;
 }
 
 .btn {
   border-radius: 9px;
   font-family: 'Oswald', sans-serif;
   color: #fff;
-  font-size: 130%;
+  font-size: 110%;
   padding: 10px 20px;
   border: solid #036A81 3px;
   text-transform: uppercase;
@@ -106,58 +108,130 @@ html, body {
 
 /*Info END*/
 
+/*About*/
+
+.about {
+  background-color: #f2f2f2;
+  padding-top: 85px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.about h1 {
+  font-size: 2em;
+  color: #337ab7;
+  padding: 0 0 25px;
+  text-align: center;
+}
+
+.about p {
+  padding-bottom: 25px;
+}
+
+.about img {
+  border: solid black 3px;
+}
+
+/*About END*/
+
+/* cars */
+
+.cars {
+  background-color: #f2f2f2;
+  padding: 15px 15px;
+  text-align: center; 
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 250px;
+
+}
+
+.thumbnail {
+  padding: 5px 5px;
+  border: solid #000 1px;
+}
+
+.col-lg-4 {
+  padding: 20px;
+}
+
+.thumbnail .caption-full {
+  padding: 9px;
+}
+
+/* car end */
+
+/* contact page */
+
+/* newsletter */
+
+.newsletter {
+  background-color: #f2f2f2;
+  padding-top: 85px;
+  padding-bottom: 75px;
+  text-align: center;
+}
+
+.newsletter h4 {
+  font-size: 2em;
+  color: #337ab7;
+  padding: 0 0 25px;
+  text-align: center;
+}
+
+.newsletter p {
+  padding-bottom: 25px;
+}
+
+.newsletter button {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 1;
+}
+
+.newsletter ul li {
+  display: inline;
+}
+
+/* newsletter */
+
+
 #inputName {
   margin-top: 55px;
   margin-bottom: 5px;
-  border-bottom-right-radius: 1;
-  border-bottom-left-radius: 1;
-  border-top-left-radius: 1;
-  border-top-right-radius: 1;
+  border-radius: 1;
 }
 
 #inputUsername {
   margin-top: 5px;
   margin-bottom: 5px;
-  border-bottom-right-radius: 1;
-  border-bottom-left-radius: 1;
-  border-top-left-radius: 1;
-  border-top-right-radius: 1;
+  border-radius: 1;
 }
 
 #inputEmail {
   margin-top: 5px;
   margin-bottom: 5px;
-  border-bottom-right-radius: 1;
-  border-bottom-left-radius: 1;
-  border-top-left-radius: 1;
-  border-top-right-radius: 1;
+  border-radius: 1;
 }
 
 #inputPassword {
   margin-top: 5px;
   margin-bottom: 5px;
-  border-bottom-right-radius: 1;
-  border-bottom-left-radius: 1;
-  border-top-left-radius: 1;
-  border-top-right-radius: 1;
+  border-radius: 1;
 }
 
 #confirmPassword {
   margin-top: 5px;
   margin-bottom: 5px;
-  border-bottom-right-radius: 1;
-  border-bottom-left-radius: 1;
-  border-top-left-radius: 1;
-  border-top-right-radius: 1;
+  border-radius: 1;
 }
 
 #inputImage {
   margin-top: 5px;
   margin-bottom: 10px;
-  border-bottom-right-radius: 1;
-  border-bottom-left-radius: 1;
-  border-top-left-radius: 1;
-  border-top-right-radius: 1;
+  border-radius: 1;
 }
 
 
@@ -188,18 +262,12 @@ html, body {
 
 .form-signin input[type="text"] {
   margin-top: 55px;
-  border-bottom-right-radius: 1;
-  border-bottom-left-radius: 1;
-  border-top-left-radius: 1;
-  border-top-right-radius: 1;
+  border-radius: 1;
 }
 .form-signin input[type="password"] {
   margin-top: 5px;
   margin-bottom: 10px;
-  border-bottom-right-radius: 1;
-  border-bottom-left-radius: 1;
-  border-top-left-radius: 1;
-  border-top-right-radius: 1;
+  border-radius: 1;
 }
 
 /* SIGNIN END */
