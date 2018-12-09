@@ -1,7 +1,7 @@
 # kjs-webdesign
 Repo for Web Design Project - Kevin Kerin, Johnathan Munster, Sebastian Ryan.
 
-//Note Preferred Option
+<b>Note Preferred Option </b>
 <b>To Run this site - simply click the following link which direct you to the full site: https://glacial-castle-40173.herokuapp.com/.
 Here you will be able to review all of our pages and work we've completed. 
 
